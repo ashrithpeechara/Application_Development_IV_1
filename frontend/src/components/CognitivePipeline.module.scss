@@ -1,0 +1,132 @@
+@import '../styles/variables.scss';
+
+.pipelineCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+
+  .titleGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    .iconBox {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7c3aed;
+    }
+
+    .title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .subtitle {
+      font-size: 0.68rem;
+      color: #64748b;
+      font-family: $font-mono;
+    }
+  }
+}
+
+.stagesTrack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+  gap: 0.5rem;
+}
+
+.stageNode {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.65rem 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: all 0.15s ease;
+
+  .stageTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.15rem;
+
+    .stepNum {
+      font-size: 0.65rem;
+      font-family: $font-mono;
+      font-weight: 700;
+      color: #64748b;
+    }
+
+    .statusIconDone {
+      color: #059669;
+    }
+    .statusIconActive {
+      color: #7c3aed;
+    }
+    .statusIconPending {
+      color: #94a3b8;
+    }
+  }
+
+  .stageTitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .stageDesc {
+    font-size: 0.64rem;
+    color: #64748b;
+    line-height: 1.25;
+  }
+
+  &.completed {
+    border-color: #a7f3d0;
+    background: #ecfdf5;
+
+    .stageTitle {
+      color: #047857;
+    }
+  }
+
+  &.active {
+    border-color: #c4b5fd;
+    background: #f5f3ff;
+    box-shadow: 0 2px 4px rgba(124, 58, 237, 0.1);
+    transform: translateY(-1px);
+
+    .stageTitle {
+      color: #6d28d9;
+      font-weight: 800;
+    }
+  }
+
+  &.pending {
+    opacity: 0.6;
+  }
+}
+
+

@@ -1,0 +1,137 @@
+@import '../styles/variables.scss';
+
+.a2aContainer {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+
+  .titleGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+}
+
+.messagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.messageEnvelope {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.85rem 1.1rem;
+  position: relative;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+
+  &:hover {
+    border-color: #cbd5e1;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+
+  &.activeMessage {
+    border-color: #0284c7;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.1);
+  }
+}
+
+.envelopeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e2e8f0;
+
+  .routingGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: $font-mono;
+
+    .from { color: #0284c7; }
+    .arrow { color: #64748b; }
+    .to { color: #7c3aed; }
+  }
+
+  .metaGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.68rem;
+    font-family: $font-mono;
+    color: #64748b;
+  }
+}
+
+.envelopeBody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+
+  .fieldBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+
+    .fieldLabel {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: #64748b;
+      font-family: $font-mono;
+      text-transform: uppercase;
+    }
+
+    .fieldVal {
+      font-size: 0.72rem;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+  }
+}
+
+.evidenceBox {
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 0.5rem 0.7rem;
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+
+  .evidenceRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.15rem;
+
+    .k { color: #0284c7; }
+    .v { color: #0f172a; font-weight: 600; }
+  }
+}
+
+

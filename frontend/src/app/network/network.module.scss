@@ -1,0 +1,169 @@
+@import '../../styles/variables.scss';
+
+.networkPage {
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+
+  .titleGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .subtitle {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+  }
+}
+
+.controlsBar {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+
+  .leftActions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btnAction {
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    font-family: $font-mono;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+
+    &.btnNormal {
+      background: #f0f9ff;
+      border-color: #bae6fd;
+      color: #0284c7;
+
+      &:hover {
+        background: #e0f2fe;
+      }
+    }
+
+    &.btnAnomaly {
+      background: #fff1f2;
+      border-color: #fecdd3;
+      color: #be123c;
+
+      &:hover {
+        background: #ffe4e6;
+      }
+    }
+
+    &.btnFailure {
+      background: #fffbeb;
+      border-color: #fde68a;
+      color: #b45309;
+
+      &:hover {
+        background: #fef3c7;
+      }
+    }
+
+    &.btnReset {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+      color: #64748b;
+
+      &:hover {
+        background: #f1f5f9;
+        color: #0f172a;
+      }
+    }
+  }
+}
+
+.routeComparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.routeCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+
+  .routeHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-family: $font-mono;
+    color: #0f172a;
+  }
+
+  .routeDetails {
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-size: 0.72rem;
+    font-family: $font-mono;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+
+      .k { color: #64748b; }
+      .v { color: #0f172a; font-weight: 600; }
+    }
+  }
+}
+
+

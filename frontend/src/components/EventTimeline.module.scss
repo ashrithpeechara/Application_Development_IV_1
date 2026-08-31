@@ -1,0 +1,127 @@
+@import '../styles/variables.scss';
+
+.timelineCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+
+  .titleGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    .iconBox {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0284c7;
+    }
+
+    .title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .subtitle {
+      font-size: 0.68rem;
+      color: #64748b;
+      font-family: $font-mono;
+    }
+  }
+}
+
+.eventsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  flex: 1;
+}
+
+
+.eventRow {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+
+  &:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+
+  .timeCol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 65px;
+    font-family: $font-mono;
+    font-size: 0.68rem;
+    color: #64748b;
+
+    .sourceTag {
+      font-weight: 700;
+      color: #0284c7;
+      margin-top: 0.15rem;
+    }
+  }
+
+  .contentCol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    flex: 1;
+
+    .eventTitle {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .eventMsg {
+      font-size: 0.72rem;
+      color: #475569;
+      line-height: 1.35;
+    }
+  }
+}
+
+.levelInfo { border-left: 3px solid #0284c7; }
+.levelWarning { border-left: 3px solid #d97706; }
+.levelDanger { border-left: 3px solid #e11d48; }
+.levelSuccess { border-left: 3px solid #059669; }
+
+

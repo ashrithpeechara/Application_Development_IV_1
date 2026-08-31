@@ -1,0 +1,289 @@
+@import '../styles/variables.scss';
+
+.cognitiveSection {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+
+  .titleGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    .iconBox {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0284c7;
+    }
+
+    .title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .subtitle {
+      font-size: 0.68rem;
+      color: #64748b;
+      font-family: $font-mono;
+    }
+  }
+}
+
+// Task Decomposition
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.taskCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+
+  .taskTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    .codeTitle {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+
+      .code {
+        font-family: $font-mono;
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: #0284c7;
+        background: #f0f9ff;
+        border: 1px solid #bae6fd;
+        padding: 1px 5px;
+        border-radius: 4px;
+      }
+
+      .name {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #0f172a;
+      }
+    }
+  }
+
+  .taskDetail {
+    font-size: 0.72rem;
+    color: #334155;
+    font-family: $font-mono;
+    background: #ffffff;
+    padding: 0.35rem 0.6rem;
+    border-radius: 4px;
+    border-left: 3px solid #0284c7;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    line-height: 1.35;
+  }
+
+  &.taskDone {
+    border-color: #a7f3d0;
+    background: #f0fdf4;
+  }
+
+  &.taskInProgress {
+    border-color: #ddd6fe;
+    background: #f5f3ff;
+  }
+}
+
+
+// Risk Meter
+.riskMeterWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.riskScoreRow {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e2e8f0;
+
+  .gaugeBox {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    .gaugeSvg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    .scoreValue {
+      position: absolute;
+      font-size: 1.35rem;
+      font-weight: 800;
+      font-family: $font-mono;
+      color: #0f172a;
+    }
+  }
+
+  .riskTextGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .riskCategory {
+      font-size: 0.95rem;
+      font-weight: 800;
+      font-family: $font-mono;
+      letter-spacing: 0.02em;
+    }
+
+    .confidenceBadge {
+      font-size: 0.72rem;
+      color: #64748b;
+      font-family: $font-mono;
+    }
+  }
+}
+
+.factorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.factorItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+
+  .factorHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-family: $font-mono;
+
+    .name { color: #64748b; }
+    .score { font-weight: 700; color: #0f172a; }
+  }
+
+  .factorBarBg {
+    width: 100%;
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+
+    .factorBarFill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+  }
+}
+
+// Decision Panel
+.decisionCard {
+  background: #ffffff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.08);
+
+  .decisionTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .decisionTitle {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #0284c7;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  }
+
+  .decisionRow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    font-size: 0.75rem;
+
+    .label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      font-family: $font-mono;
+    }
+
+    .val {
+      color: #1e293b;
+      line-height: 1.35;
+    }
+  }
+
+  .decisionMetrics {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 0.15rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #e2e8f0;
+    font-family: $font-mono;
+    font-size: 0.72rem;
+
+    .metricItem {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+
+      .label { color: #64748b; }
+      .val { font-weight: 700; color: #0284c7; }
+    }
+  }
+}
+
+

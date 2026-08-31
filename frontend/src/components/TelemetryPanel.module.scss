@@ -1,0 +1,141 @@
+@import '../styles/variables.scss';
+
+.telemetryCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+
+  .panelHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+
+    .titleGroup {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+
+      .iconBox {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        background: #f1f5f9;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #475569;
+      }
+
+      .title {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      .subtitle {
+        font-size: 0.68rem;
+        color: #64748b;
+        font-family: $font-mono;
+      }
+    }
+
+    .healthBadge {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-family: $font-mono;
+
+      .healthLabel {
+        color: #64748b;
+      }
+      .healthVal {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.metricTile {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  .tileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .metricLabel {
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #64748b;
+    }
+  }
+
+  .metricRow {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .metricValue {
+    font-size: 1.25rem;
+    font-weight: 800;
+    font-family: $font-mono;
+    color: #0f172a;
+    line-height: 1;
+
+    .unit {
+      font-size: 0.68rem;
+      color: #64748b;
+      margin-left: 0.25rem;
+      font-weight: 500;
+    }
+  }
+
+  .sparkline {
+    width: 80px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  &.criticalTile {
+    border-color: #fecdd3;
+    background: #fff1f2;
+
+    .metricValue {
+      color: #be123c;
+    }
+  }
+}

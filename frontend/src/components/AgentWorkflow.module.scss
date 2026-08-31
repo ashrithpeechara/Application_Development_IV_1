@@ -1,0 +1,278 @@
+@import '../styles/variables.scss';
+
+.agentDeck {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  height: 560px;
+}
+
+
+.deckHeader {
+  padding: 0.85rem 1.1rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+  .titleGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+
+    .iconBox {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: #f5f3ff;
+      border: 1px solid #ddd6fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7c3aed;
+    }
+
+    .title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle {
+      font-size: 0.68rem;
+      color: #64748b;
+      font-family: $font-mono;
+    }
+  }
+}
+
+.agentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 0.75rem;
+  overflow-y: auto;
+  flex: 1;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+}
+
+.agentCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+  transition: all 0.15s ease;
+  position: relative;
+  flex-shrink: 0; // CRITICAL: Prevents flexbox from squishing cards!
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--agent-color, #0284c7);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+
+  &:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+  }
+
+  &.activeAgent {
+    border-color: #cbd5e1;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  .agentMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+
+    .agentIconCircle {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    .agentName {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .agentRole {
+      font-size: 0.65rem;
+      color: #64748b;
+      font-family: $font-mono;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .statusBadge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    font-family: $font-mono;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &.danger {
+      color: #be123c;
+      background: #fff1f2;
+      border-color: #fecdd3;
+    }
+    &.purple {
+      color: #6d28d9;
+      background: #f5f3ff;
+      border-color: #ddd6fe;
+    }
+    &.warning {
+      color: #b45309;
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+    &.success {
+      color: #047857;
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+    }
+  }
+}
+
+.taskTerminal {
+  background: #f8fafc;
+  border-radius: 5px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.72rem;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid #e2e8f0;
+  min-height: 28px;
+
+  .termIcon {
+    color: #64748b;
+    flex-shrink: 0;
+  }
+
+  .taskContent {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #0f172a;
+    font-family: $font-mono;
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  .metricLabelRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    font-family: $font-mono;
+    color: #64748b;
+
+    .metricVal {
+      font-weight: 700;
+      color: #0f172a;
+    }
+  }
+
+  .progressBar {
+    width: 100%;
+    height: 3px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    overflow: hidden;
+
+    .progressFill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+  }
+}
+
+.eventRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  color: #64748b;
+
+  .bullet {
+    color: #0284c7;
+    font-weight: 700;
+  }
+
+  .eventText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
+
